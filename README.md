@@ -57,3 +57,8 @@ Finishing Wing Fortress in 1:44:
 Dying in Wing Fortress at 0:05, then finishing off in 1:44:
 
 ```5+104-```
+
+
+## Limitations
+- It's currently not possible to have a value for IGT and a skip for RTA in the same split
+- Component settings are saved with the layout
