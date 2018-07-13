@@ -6,20 +6,20 @@ using System.Windows.Forms;
 
 namespace LiveSplit.UI.Components
 {
-    public class ManualGameTimeComponent : LogicComponent
+    public class RTAmTBTimeComponent : LogicComponent
     {
-        public ManualGameTimeSettings Settings { get; set; }
+        public RTAmTBTimeSettings Settings { get; set; }
 
         public GraphicsCache Cache { get; set; }
         protected LiveSplitState CurrentState { get; set; }
         public Form GameTimeForm { get; set; }
         protected Point PreviousLocation { get; set; } 
 
-        public override string ComponentName => "Manual Game Time";
+        public override string ComponentName => "RTA-TB Game Time";
 
-        public ManualGameTimeComponent(LiveSplitState state)
+        public RTAmTBTimeComponent(LiveSplitState state)
         {
-            Settings = new ManualGameTimeSettings();
+            Settings = new RTAmTBTimeSettings();
             GameTimeForm = new ShitSplitter(state, Settings);
             state.OnStart += state_OnStart;
             state.OnReset += state_OnReset;
@@ -66,6 +66,12 @@ namespace LiveSplit.UI.Components
 
         public override void Update(IInvalidator invalidator, LiveSplitState state, float width, float height, LayoutMode mode)
         {
+            var gt = (ShitSplitter)GameTimeForm;
+            if (gt.PauseInProgress && (state.PauseTime >= gt.PauseDuration))
+            {
+                gt.PauseInProgress = false;
+                gt.Model.Pause();
+            }
         }
 
         public override void Dispose()
