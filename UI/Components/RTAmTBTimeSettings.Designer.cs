@@ -531,7 +531,7 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Continue frames:";
             // 
-            // s_PointsMultiplicationFactor
+            // s_ContinueFrames
             // 
             this.s_ContinueFrames.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.s_ContinueFrames.Location = new System.Drawing.Point(92, 2);
@@ -541,7 +541,7 @@
             0,
             0,
             0});
-            this.s_ContinueFrames.Name = "s_PointsMultiplicationFactor";
+            this.s_ContinueFrames.Name = "s_ContinueFrames";
             this.s_ContinueFrames.Size = new System.Drawing.Size(348, 20);
             this.s_ContinueFrames.TabIndex = 3;
             // 

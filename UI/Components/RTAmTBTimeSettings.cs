@@ -33,17 +33,17 @@ namespace LiveSplit.UI.Components
             // initialise settings to Sonic 2
             PointsPerFrame = 100;
             FramesPerSecond = FPS_GENSMS;
-            ContinueFrames = 12000;
+            ContinueFrames = 120;
 
             IGTLookup = new SortedDictionary<int, int>();
-            IGTLookup.Add(60000, 50000);
-            IGTLookup.Add(90000, 10000);
-            IGTLookup.Add(120000, 5000);
-            IGTLookup.Add(150000, 4000);
-            IGTLookup.Add(180000, 3000);
-            IGTLookup.Add(210000, 1000);
-            IGTLookup.Add(599000, 100);
-            IGTLookup.Add(600000, 100000);   // oops
+            IGTLookup.Add(30000, 62000);
+            IGTLookup.Add(45000, 22000);
+            IGTLookup.Add(60000, 5000);
+            IGTLookup.Add(90000, 4000);
+            IGTLookup.Add(120000, 3000);
+            IGTLookup.Add(180000, 2000);
+            IGTLookup.Add(240000, 1000);
+            IGTLookup.Add(300000, 500);
 
             // only PointsPerFrame and PointsMultiplicationFactor can be automatically dealt with; all other settings have complex requirements
             s_PointsPerFrame.DataBindings.Add("Value", this, "PointsPerFrame", false, DataSourceUpdateMode.OnPropertyChanged);
